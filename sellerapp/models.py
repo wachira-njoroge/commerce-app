@@ -18,6 +18,9 @@ class Product(models.Model):
     def __str__(self):
         return self.name
 
+class ProductTree(models.Model):
+    ancestor = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='descendants')
+    descendant = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='ancestors')
 class Order(models.Model):
     ref_no = models.CharField(max_length=100)    
     date_created = models.DateTimeField(auto_now_add=True)
@@ -26,4 +29,6 @@ class Order(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     def __str__(self):
         return self.ref_no
+
+
 

@@ -7,7 +7,17 @@ jobs:
   git-checkout:
     runs-on: self-hosted
     steps:
-    - name: Clone repo
-      run: echo "${{github.repository}}"
-    #- name: Build the Docker image
-     # run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+    # Ensure the directory is clean before cloning repo
+    - name: Clean the workspace
+      run: |
+          find . -mindepth 1 -delete
+    
+    # Clone the repo
+    - name: Clone repository
+      run: |
+         git clone https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} .
+    
+    # Create an Image
+    - name: Build Docker image
+      run: |
+        docker build -t seller-app-v1 .

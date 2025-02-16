@@ -1,0 +1,13 @@
+name: App Deployment
+
+on:
+  push:
+    branches: [ "master" ]
+jobs:
+  git-checkout:
+    runs-on: amazon-linux-2
+    steps:
+    - name: Clone repo
+      run: echo "${{github.repository}}"
+    #- name: Build the Docker image
+     # run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)

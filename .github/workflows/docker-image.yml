@@ -20,4 +20,6 @@ jobs:
     # Create an Image
     - name: Build Docker image
       run: |
+        ls -l
+        cd eseller
         docker build -t seller-app-v1 .

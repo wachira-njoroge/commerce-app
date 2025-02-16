@@ -5,7 +5,7 @@ on:
     branches: [ "master" ]
 jobs:
   git-checkout:
-    runs-on: amazon-linux-2
+    runs-on: self-hosted
     steps:
     - name: Clone repo
       run: echo "${{github.repository}}"

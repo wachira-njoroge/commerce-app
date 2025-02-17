@@ -20,8 +20,6 @@ jobs:
     # Create an Image
     - name: Build Docker image
       run: |
-        ls -l
-        # cp requirements.txt eseller && cd eseller
         docker build -t seller-app-v1 -f eseller/Dockerfile .
         
     # Launch a Docker container from the created image
@@ -29,7 +27,7 @@ jobs:
       run: | 
         # Stop and remove current running container and create new container from 
         # incoming pushed code changes
-        # docker stop sellerapp
+        docker stop sellerapp
         docker rm sellerapp
         docker run -it -dp 8050:8050 --name sellerapp seller-app-v1
         docker system prune -a -f

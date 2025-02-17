@@ -21,5 +21,5 @@ jobs:
     - name: Build Docker image
       run: |
         ls -l
-        cd eseller
+        cp requirements.txt eseller && cd eseller
         docker build -t seller-app-v1 .

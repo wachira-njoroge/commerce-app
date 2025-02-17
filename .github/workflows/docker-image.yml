@@ -22,7 +22,7 @@ jobs:
       run: |
         ls -l
         # cp requirements.txt eseller && cd eseller
-        docker build -t seller-app-v1 eseller/Dockerfile
+        docker build -t seller-app-v1 -f eseller/Dockerfile .
         
     # Launch a Docker container from the created image
     - name: Launch Container

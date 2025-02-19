@@ -142,9 +142,8 @@ DATABASES = {
         'NAME': 'sellerdb',
         'USER': 'merchant',
         'PASSWORD': 'sela00',
-        'HOST': 'localhost',
-        'PORT': '3306',
-        'OPTIONS': {'unix_socket': ''} 
+        'HOST': '54.93.230.197',
+        'PORT': '3306'
     }
 }
 

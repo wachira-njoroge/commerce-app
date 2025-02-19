@@ -142,7 +142,7 @@ DATABASES = {
         'NAME': 'sellerdb',
         'USER': 'merchant',
         'PASSWORD': 'sela00',
-        'HOST': 'host.docker.internal',
+        'HOST': '172.31.41.25',
         'PORT': '3306'
     }
 }

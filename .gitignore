@@ -1,6 +1,4 @@
 oidc_private_key.pem
 oidc_public_key.pem
-*/migrations/
-!*/migrations/__init__.py
 __pycache__/
 *.pyc

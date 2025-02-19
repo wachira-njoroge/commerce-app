@@ -139,10 +139,10 @@ WSGI_APPLICATION = 'eseller.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'sellerapp',
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST': 'localhost',
+        'NAME': 'sellerdb',
+        'USER': 'merchant',
+        'PASSWORD': 'sela00',
+        'HOST': 'locahost',
         'PORT': '3306',
     }
 }

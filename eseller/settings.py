@@ -142,7 +142,7 @@ DATABASES = {
         'NAME': 'sellerdb',
         'USER': 'merchant',
         'PASSWORD': 'sela00',
-        'HOST': 'locahost',
+        'HOST': '54.93.230.197',
         'PORT': '3306',
     }
 }

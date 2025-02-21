@@ -18,6 +18,10 @@ jobs:
       run: |
          git clone https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} .
     
+    # Get env file in host for use in the docker context
+    - name: Get ENV variables
+      run: cp /home/ec2-user/eseller/.env .
+    
     # Create an Image
     - name: Build Docker image
       run: |

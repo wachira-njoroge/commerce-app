@@ -1,6 +1,7 @@
 from pathlib import Path
 import os
-
+from dotenv import load_dotenv
+load_dotenv()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -14,7 +15,7 @@ SECRET_KEY = 'django-insecure-af-7=k0-#z1-f)q@axvv#_%w5%5fb5&krb@ki2i(-p$ls2cn9$
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["54.93.230.197", "sellerapp.chesspesa.com","testserver"]
+ALLOWED_HOSTS = [os.getenv('DBHOST'), "sellerapp.chesspesa.com","testserver"]
 
 
 # Application definition
@@ -85,11 +86,11 @@ WSGI_APPLICATION = 'eseller.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'sellerdb',
-        'USER': 'merchant',
-        'PASSWORD': 'sela00',
-        'HOST': '54.93.230.197',
-        'PORT': '3306'
+        'NAME': os.getenv('DBNAME'),
+        'USER': os.getenv('DBUSER'),
+        'PASSWORD': os.getenv('DBPASS'),
+        'HOST': os.getenv('DBHOST'),
+        'PORT': os.getenv('DBPORT')
     }
 }
 

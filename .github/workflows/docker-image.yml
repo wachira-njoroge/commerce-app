@@ -10,7 +10,7 @@ jobs:
     # Ensure the directory is clean before cloning repo
     - name: Clean the workspace
       run: |
-          find . -mindepth 1 ! -name '.env' -delete
+          find . -mindepth 1 -delete
 
     
     # Clone the repo

@@ -1,4 +1,2 @@
-oidc_private_key.pem
-oidc_public_key.pem
 __pycache__/
 *.pyc

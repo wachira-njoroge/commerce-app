@@ -15,7 +15,7 @@ SECRET_KEY = 'django-insecure-af-7=k0-#z1-f)q@axvv#_%w5%5fb5&krb@ki2i(-p$ls2cn9$
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [os.getenv('DBHOST', 'localhost'), "sellerapp.chesspesa.com","testserver"]
+ALLOWED_HOSTS = [os.getenv('DBHOST', 'localhost'), "sellerapp.chesspesa.com","testserver", "127.0.0.1"]
 
 
 # Application definition

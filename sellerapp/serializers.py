@@ -11,11 +11,25 @@ class ProductSerializer(serializers.ModelSerializer):
         model = Product
         fields = ['name', 'price', 'description']
 
+class OrderSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Order
+        fields = ['delivery_date', 'customer', 'product']
+
+    def create(self, validated_data):
+        print(validated_data)
+        return Order.objects.create(**validated_data)
+
 class CategorySerializer(serializers.ModelSerializer):
-    products = ProductSerializer(many=True)
+    products = ProductSerializer(many=True, help_text="List of products in this category")
+    parent = serializers.CharField(source="parent.name", required=False, help_text="Parent category name")
     class Meta:
         model = Category
         fields = ['name', 'parent', 'products']
+        extra_kwargs = {
+            'name': {'help_text': 'Category name'},
+            'parent': {'help_text': 'Parent category (optional)'}
+        }
 
     def create(self, validated_data):
         products = validated_data.pop('products')
